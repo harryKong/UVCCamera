@@ -24,6 +24,8 @@
 package com.serenegiant.widget;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.TextureView;
 
@@ -101,5 +103,10 @@ public class SimpleUVCCameraTextureView extends TextureView	// API >= 14
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
-
+	@Override
+	public void setBackgroundDrawable(Drawable background) {
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N && background != null) {
+			setBackgroundDrawable(background);
+		}
+	}
 }
