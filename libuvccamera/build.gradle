@@ -49,6 +49,10 @@ android {
 			jni.srcDirs = []
 		}
 	}
+	lintOptions {
+		abortOnError false
+	}
+
 }
 
 tasks.withType(JavaCompile) {
@@ -87,6 +91,10 @@ dependencies {
 
 	implementation "com.android.support:support-v4:${supportLibVersion}"
 	implementation "com.android.support:support-annotations:${supportLibVersion}"
+	implementation "com.android.support:animated-vector-drawable:${supportLibVersion}"
+	implementation "com.android.support:appcompat-v7:${supportLibVersion}"
+	implementation "com.android.support:preference-v7:${supportLibVersion}"
+
 
 	implementation("com.serenegiant:common:${commonLibVersion}") {
 		exclude module: 'support-v4'
